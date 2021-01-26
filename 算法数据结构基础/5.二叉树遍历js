@@ -1,0 +1,55 @@
+const root = {
+  val: 'A',
+  left: {
+    val: 'B',
+    left: {
+      val: 'D'
+    },
+    right: {
+      val: 'E'
+    }
+  },
+  right: {
+    val: 'C',
+    right: {
+      val: 'F'
+    }
+  }
+}
+
+// 二叉树 先序遍历
+function preorder(root) {
+  if (!root) return;
+
+  console.log(root.val)   // 当前执行体
+
+  preorder(root.left)
+  preorder(root.right)
+}
+
+// preorder(root)
+
+// 二叉树 中序遍历
+function inorder(root) {
+  if (!root) return;
+
+  inorder(root.left)
+
+  console.log(root.val)  // 当前执行体
+
+  inorder(root.right)
+}
+
+// inorder(root)
+
+// 二叉树 后序遍历
+function postorder(root) {
+  if (!root) return;
+
+  postorder(root.left)
+  postorder(root.right)
+
+  console.log(root.val)   // 当前执行体
+}
+
+postorder(root)
